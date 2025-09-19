@@ -54,6 +54,7 @@ HamadxHP's Source Code
   <h2 class="c-card__title">タイトル</h2>
   <button class="c-button c-button--primary js-open-menu">送信</button>
 </section>
+```
 
 ## 開発環境構築
 ```bash
