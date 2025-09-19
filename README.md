@@ -26,11 +26,29 @@ HamadxHP's Source Code
 - SEO：meta設定、構造化データ
 - アクセスビリティ確保
 
-## 命名規則（FLOCSS+BEM）
-- レイヤー: `l-`, `c-`, `p-`, `u-`, `is-`, `has-`, `js-`
-- BEM: `block__element--modifier`
-- 例1: `c-card`, `c-card__title`, `c-card--featured`
-- 例2:
+# CSS命名規則（FLOCSS準拠）
+
+## レイヤープレフィックス
+- `l-` Layout：ページ全体の骨組み（ヘッダー/フッター/グリッド）
+- `c-` Component：再利用可能な小さな部品（ボタン、タグ、フォーム部品）
+- `p-` Project：ページ/セクション固有の塊（Hero、NewsList、Offices）
+- `u-` Utility：単機能ユーティリティ（`u-mt16`, `u-text-center`）
+- `is-` / `has-`：状態（`is-active`, `has-error`）
+- `js-`：JSフック用（スタイルは**当てない**）
+- `qa-`：E2E等のテストフック（任意）
+- 例：
+  - コンポーネント：`c-card`, `c-card__title`, `c-card--featured`
+  - プロジェクト：`p-news-list`, `p-news-list__item`
+  - レイアウト：`l-container`, `l-header`
+  - 状態：`is-active`, `has-error`
+  - ユーティリティ：`u-mb16`, `u-text-center`
+- SCSS構成：`foundation/`, `layout/`, `object/{component,project,utility}`
+
+## BEM記法
+- 要素：`__`、修飾：`--`
+- 例）`c-button` / `c-button--primary` / `c-card__title`
+
+## 例
 ```html
 <section class="p-news-list is-loaded">
   <h2 class="c-card__title">タイトル</h2>
